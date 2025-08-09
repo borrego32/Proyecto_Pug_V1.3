@@ -1,9 +1,9 @@
 <?php
 //configuracion de la conexion
-$servername="sql200.infinityfree.com";
-$username="if0_39241802";
-$password="Familiacruz17";
-$dbname="if0_39241802_basedatos";
+$servername="sql2******";
+$username="if*****";
+$password="********";
+$dbname="i**********";
 //crear conexion
 $conn = new mysqli($servername,$username,$password,$dbname);
 
