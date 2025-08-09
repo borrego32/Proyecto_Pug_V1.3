@@ -2,6 +2,11 @@
 // Inicia la sesión para acceder a las variables de sesión
 session_start();
 
+// Evitar caché
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+
 // Verifica si el administrador ha iniciado sesión.
 // Si no está definido 'admin_id', redirige al login.
 if (!isset($_SESSION['admin_id'])) {
