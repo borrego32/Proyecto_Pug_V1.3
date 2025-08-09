@@ -191,7 +191,7 @@ if (!isset($_SESSION['userid'])) {
       <input type="text" id="usuario" placeholder="Tu nombre">
       <input type="text" id="mensaje" placeholder="Escribe algo...">
       <button id="enviar" class="boton-chat">Enviar</button>
-      <button id="limpiar" class="boton-chat">Limpiar Chat</button>
+      
     </div>
   </div>
 
@@ -240,14 +240,7 @@ if (!isset($_SESSION['userid'])) {
       }
     });
 
-    // Evento para limpiar el chat
-    $('#limpiar').click(function() {
-      $.post('limpiar.php', function(res) {
-        if (res === 'ok') {
-          $('#chat').html('');
-        }
-      });
-    });
+  
 
     // Carga mensajes cada 2 segundos
     setInterval(cargarMensajes, 2000);
