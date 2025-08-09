@@ -108,6 +108,22 @@ $result = $conn->query("SELECT * FROM usuarios");
       color: #c0392b;
       text-decoration: underline;
     }
+         .boton-chat {
+      background-color: #4CAF50; /* verde */
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-left: 675px;
+      margin-top: 30px;
+    }
+    .boton-chat:hover{
+
+         background-color: #45a049;
+    }
   </style>
 </head>
 <body>
@@ -142,6 +158,23 @@ $result = $conn->query("SELECT * FROM usuarios");
   </tr>
   <?php endwhile; ?>
 </table>
+<div class="input-group">
+   
+      <button id="limpiar" class="boton-chat">Limpiar Chat</button>
+    </div>
+
 
 </body>
 </html>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+ // Evento para limpiar el chat
+    $('#limpiar').click(function() {
+      $.post('limpiar.php', function(res) {
+        if (res === 'ok') {
+          $('#chat').html('');
+        }
+      });
+    });
+</script>
