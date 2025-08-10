@@ -15,7 +15,7 @@ require 'db.php';
 // Verifica si se ha enviado el parámetro 'id' por la URL (método GET)
 if (isset($_GET['id'])) {
   // Convierte el valor recibido a un número entero para evitar inyecciones SQL
-  $id = intval($_GET['id']);
+  $id = $_GET['id']; //este cambio te puede ayudar a manejar la base de datos de manera manual
 
   // Prepara una sentencia SQL para eliminar el usuario con el ID especificado
   $stmt = $conn->prepare("DELETE FROM usuarios WHERE id = ?");
