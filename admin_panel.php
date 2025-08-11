@@ -129,6 +129,34 @@ $result = $conn->query("SELECT * FROM usuarios");
 
          background-color: #45a049;
     }
+        #chat {
+        margin-top: 50px;
+      background-color: #c3c3c3;
+      border-radius: 20px;
+      height: 200px;
+      overflow-y: auto; 
+      padding: 15px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+    }
+
+    /* Cada mensaje del chat */
+    .chat-message {
+      margin-bottom: 10px;
+      padding: 8px 12px;
+      background-color: #50585e;
+      border-radius: 10px;
+      width: fit-content;
+      max-width: 80%;
+    }
+/* Título del chat */
+    .chat-header {
+      font-size: 22px;
+      font-weight: bold;
+      color: #42a7c1;
+      margin-bottom: 20px;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -168,7 +196,9 @@ $result = $conn->query("SELECT * FROM usuarios");
       <button id="limpiar" class="boton-chat">Limpiar Chat</button>
     </div>
 
+<div id="chat"></div>
 
+<div class="chat-header">CHAT EN VIVO</div>
 </body>
 </html>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
